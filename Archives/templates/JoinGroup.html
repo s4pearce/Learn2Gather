@@ -1,0 +1,37 @@
+{{define "JoinGroup"}}
+ <!DOCTYPE html>
+<html lang="en-UK">
+<head>
+<meta charset="UTF-8">
+<link href="/staticFiles/style.css" rel="stylesheet">
+<title>Learn2Gather Join this Group</title>
+</head>
+
+<body>
+<img class="logo" src="logo.png"></img><div class="navbar">
+<ul class="navbar">		
+<li><a href="/contact">Contact Us</a></li>
+<li><a href="/login">Log In</a></li>
+<li><a href="/makeagroup">Make a Group</a></li>
+<li><a href="/view">View Groups</a></li>
+<li><a href="/about">About</a></li>	
+<li><a href="/index">Home</a></li></ul></div>
+
+<!-- Things that need to be done:
+
+- Add username to Members portion of specific group. Must say "joined!" --> 
+
+<div class="content"></div>
+<div class="content2">
+<form class="makeagroup" action="submitted.html">
+<h1>Join this Group!</h1><br><br>
+To join this group, please enter your name below:<br><input type=text name=name required> <br><br><br>
+<button type=submit>Submit</button><br><br><br>
+<a href="View Groups.html">Go back to the database!</a></form>
+</div>
+
+<div class="footer">© Copyright 2015</footer>
+</body>
+
+</html> 
+{{end}}

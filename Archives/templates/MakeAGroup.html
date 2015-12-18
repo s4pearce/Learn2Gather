@@ -1,0 +1,54 @@
+{{define "MakeAGroup"}}
+ <!DOCTYPE html>
+<html lang="en-UK">
+<head>
+<meta charset="UTF-8">
+<link href="/staticFiles/style.css" rel="stylesheet">
+<title>Learn2Gather Make a Group</title>
+<!-- IMPORTING JAVASCRIPT FILES -->
+<script src="/staticFiles/MakingGroup.js"></script>
+<script src="/staticFiles/submitted.js"></script>
+</head>
+
+
+
+<!-- BEGIN HTML CODE -->
+<body>
+<img class="logo" src="logo.png"></img><div class="navbar">
+<ul class="navbar">		
+<li><a href="/contact">Contact Us</a></li>
+<li><a href="/login">Log In</a></li>
+<li><a href="/makeagroup">Make a Group</a></li>
+<li><a href="/view">View Groups</a></li>
+<li><a href="/about">About</a></li>	
+<li><a href="/index">Home</a></li></ul></div>
+
+
+<div class="content"></div>
+<div class="content2">
+<form class="makeagroup" action="/store" method="POST"><br>
+<h1>Make a Group</h1><br>
+<br>Be careful, once you make a group you can't change the details!<br><br>
+
+<!-- MAKE A GROUP FORM -->
+
+<p>Group Name:<p><input type=text name=GroupName required>
+<p>Subject/Course of Study:<p><input type=text name=Course required></p>
+<p>Participating Members:<p><input type=text name=Members required></p> TBC: ADD JAVASCRIPT CONVERTING THIS TO NUMBER OF MEMBERS
+<p>Location:<p><input type=text name=Location required></p>
+<p>Time:<p><input type=time name=Time required></p>
+<p>Date:<p><input type=date name=Date required></p>
+<p>Group Limit:<p><input type="number" name="Limit" required></p></p>
+<p>Topics Covered?:<p><input type=text name=Topics></p></p>
+
+<p>Weekly?:<input type=checkbox name="Weekly" onchange="/staticFiles/weekly()" value="1"></p>
+<p id="when" style=display:none>Until when? <input type=date name=Until></p>
+
+<p>Comments?:<p><textarea cols="20" rows="4" name=Comment></textarea></p></p>
+<p><button type=submit>Submit!</button></form></div>
+
+<div class="footer">© Copyright 2015</footer>
+</body>
+
+</html> 
+{{end}}

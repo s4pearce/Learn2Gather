@@ -1,0 +1,51 @@
+{{define "ViewGroups"}}
+ <!DOCTYPE html>
+<html lang="en-UK">
+<head>
+<meta charset="UTF-8">
+<link href="/staticFiles/style.css" rel="stylesheet">
+<title>Learn2Gather Group Database</title>
+<script src="/staticFiles/GroupFull.js"></script>
+</head>
+
+<body>
+<img class="logo" src="logo.png"></img><div class="navbar">
+<ul class="navbar">		
+<li><a href="/contact">Contact Us</a></li>
+<li><a href="/login">Log In</a></li>
+<li><a href="/makeagroup">Make a Group</a></li>
+<li><a href="/view">View Groups</a></li>
+<li><a href="/about">About</a></li>	
+<li><a href="/index">Home</a></li></ul></div>
+
+
+<div class="content"></div>
+<div class="content2">
+	<h1>Study Group Database</h1>
+	{{range .Groups}}
+	<span onclick="myFun('{{.ID}}')">
+			
+			<b>Group Name</b>: {{.GroupName}} <br>
+			<b>Course or Subject</b>: {{.Subject}} <br>
+			<b>Current Group Members</b>: {{.Members}} <br>
+			<b>Location</b>: {{.Location}} <br>
+			<b>When</b>: {{.Time}} <br>
+			<b>Date</b>: {{.Date}} <br>
+			<b>Group Limit</b>: {{.GroupLimit}} <br>			
+			<b>Topics Covered</b>: {{.TopicsCovered}} <br>			
+			<b>Weekly?</b>: {{.Weekly}} <br>			
+			<b>Until When</b>: {{.EndDate}} <br>			
+			<b>Comments</b>: {{.Comments}} <br>	
+		
+		Want to join the above group? <a href="/add">Click here!</a> <br><br><br><br>
+		</span>
+	{{end}}
+	</div>
+</p>
+</div>
+
+<div class="footer">© Copyright 2015</footer>
+</body>
+
+</html> 
+{{end}}

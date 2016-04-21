@@ -1,0 +1,23 @@
+extends layout
+block content
+	div(class="content")
+	div(class="content2")
+		if notlogged
+			| We're sorry, you must log in to use this feature!
+			hr
+		form#formSignUp(name="adduser",method="post",action="/login") 
+			.input-group
+				span#basic-addon1.input-group-addon Username
+				input.form-control(type='text', name='username', required='', placeholder='Username', aria-describedby='basic-addon1')
+			br
+			.input-group
+				span#basic-addon1.input-group-addon Password
+				input.form-control(type='text', name='password', required='', placeholder='Password', aria-describedby='basic-addon1')
+			br
+			button.btn-primary(type="submit") Log In
+		br
+		br		
+		| Don't have an account? 
+		br
+		a.btn.btn-primary.btn-lg(href='/signup', role='button') Make one today!
+	div(class="footer") © Copyright 2015-2016

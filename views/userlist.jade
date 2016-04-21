@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	div(class="content")
+	div(class="content2")
+		h1.
+			User List
+		each user in userlist
+				p=user.Username
+				p=user.Password
+				br
+	div(class="footer") © Copyright 2015

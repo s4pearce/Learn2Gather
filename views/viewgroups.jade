@@ -1,0 +1,39 @@
+extends layout
+block content
+	div(class="content")
+	div(class="viewgroups")
+		if Message
+			| Message
+		h1(style="color:#FFFFFF; text-align:center") Available Study Groups
+		hr(style="color:#FFFFFF")
+		h4(style="color:#FFFFFF") Need help narrowing your search?
+		a.btn.btn-primary.btn-lg(href='/search', role='button') Search for groups!
+		hr(style="color:#FFFFFF")
+		each group in StudyGroups
+			.panel.panel-default
+				.panel-body
+					b Subject: 
+					p=group.Subject
+					b Topics Covered: 
+					p=group.TopicsCovered
+					b Location: 
+					p=group.Location
+					b When: 
+					p=group.Date 
+					p=group.Time
+					b Current Members: 
+					ul
+						each user in group.Members
+							li=user
+					if group.Weekly
+						b Weekly until: 
+						p=group.UntilWhen
+					b Additional Comments: 
+					p=group.Comments
+				.panel-footer
+					form(action='/joingroup', method='post')
+						input(type='text', name="groupid", value=group._id, style="visibility:hidden")
+						| Want to join this group? 
+						button.btn-primary(type="submit") Join Group
+
+	div(class="footer") © Copyright 2015

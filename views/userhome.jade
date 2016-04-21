@@ -1,0 +1,14 @@
+extends loggedlayout
+
+block content
+	div(class="content")
+	div(class="content2")
+		h1 Welcome, 
+		h1=decoded.Username
+		hr
+		| How can we help you with your study group needs today?
+		br
+		br
+		a.btn.btn-primary.btn-lg(href='/viewgroups', role='button') Available Groups
+		a.btn.btn-primary.btn-lg(href='/makeagroup', role='button') Make a Group
+		a.btn.btn-primary.btn-lg(href='/mygroups', role='button') My Groups

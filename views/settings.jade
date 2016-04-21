@@ -1,0 +1,35 @@
+extends loggedlayout
+
+block content
+	div(class="content")
+	div(class="content2")
+		h1 Settings:
+		hr
+		h2 Password Change
+		| If you would like to change your password, please fill out your new password credentials, and then click "Change Password."
+		br
+		b Current Password: 
+		b=Password
+		form(action='/settings/changepassword', method='post')
+			.input-group
+				span#basic-addon1.input-group-addon New Password
+				input.form-control(type='text', name='newPassword', placeholder='New password', aria-describedby='basic-addon1')
+			.input-group
+				span#basic-addon1.input-group-addon Confirm New Password
+				input.form-control(type='text', name='confirmPassword', placeholder='Confirm new password', aria-describedby='basic-addon1')
+			button.btn-primary(type="submit") Change Password
+		br
+		hr
+		br
+		h2 Email Change
+		| If you'd like to change your email, write your new one below and then click "Change Email."
+		br
+		b Current Email: 
+		b=Email
+		form(action='/settings/changeemail', method='post')
+			.input-group
+				span#basic-addon1.input-group-addon New Email
+				input.form-control(type='text', name='newEmail', placeholder='New password', aria-describedby='basic-addon1')
+			button.btn-primary(type="submit") Change Email	
+		br
+		a.btn.btn-primary.btn-lg(href='/', role='button') Main Menu

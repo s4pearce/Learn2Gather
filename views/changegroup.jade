@@ -1,0 +1,62 @@
+extends loggedlayout
+block content
+    .content
+    .content2
+      if Message
+        | Message
+      h1 Edit a Study Group
+      form(action='/changegroup', method='POST')
+        | To change the details of the study group, type them into the fields you want changed. Make sure to leave the other fields blank, or you will change those as well!
+        hr
+        | Current Subject: 
+        p=group.Subject
+        .input-group
+          span#basic-addon1.input-group-addon Change to:
+          input.form-control(type='text', name='Subject', placeholder='What course?', aria-describedby='basic-addon1')
+        br
+        | Current Topics Covered:
+        p=group.TopicsCovered
+        .input-group
+          span#basic-addon1.input-group-addon Change to:
+          input.form-control(type='text', name='TopicsCovered', placeholder='Any particular unit, lecture, etc.?', aria-describedby='basic-addon1')
+        br
+        | Current Date:
+        p=group.Date
+        .input-group
+          span#basic-addon1.input-group-addon Change to:
+          input.form-control(type='date', name='Date', aria-describedby='basic-addon1')
+        br
+        | Current Time:
+        p=group.Time
+        .input-group
+          span#basic-addon1.input-group-addon Change to:
+          input.form-control(type='time', name='Time', placeholder='eg. Sam', aria-describedby='basic-addon1')
+        if group.Weekly
+          br
+          | Will be weekly until:
+          p=group.UntilWhen
+            .input-group
+              span#basic-addon1.input-group-addon Change to:
+              input.form-control(type='time', name='UntilWhen', placeholder='eg. Sam', aria-describedby='basic-addon1')
+        br
+        | Current Location:
+        p=group.Location
+        .input-group
+          span#basic-addon1.input-group-addon Change to:
+          input.form-control(type='text', name='Location', placeholder='eg. HS 301', aria-describedby='basic-addon1')
+        br
+        | Current Size Limit:
+        p=group.GroupLimit
+        .input-group
+          span#basic-addon1.input-group-addon Ideal Change to:
+          input.form-control(type='number', name='GroupLimit', placeholder='How big do you want the group to be?', aria-describedby='basic-addon1')
+        br
+        | Additional Comments:
+        p=group.Comments
+        .input-group
+          span#basic-addon1.input-group-addon Change to:
+          input.form-control(type='text', name='Comments', placeholder='Anything else you want to add?', aria-describedby='basic-addon1')
+        br
+        input(type='text', name="groupid", value=group._id, style="visibility:hidden")
+        br
+        button.btn-primary(type='submit') Change this Study Group!

@@ -1,0 +1,38 @@
+doctype html
+html(lang='en-UK')
+	head
+		meta(charset='UTF-8')
+		link(href='/stylesheets/style.css', rel='stylesheet')
+		title Learn2Gather Homepage
+		link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+	body
+		nav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+			.navbar-header
+				a.navbar-brand(href='/') Learn2Gather
+			ul.nav.navbar-nav
+				li
+					a(href='/')
+						b Home
+				li
+					a(href='/about') 
+						b About
+				li
+					a(href='/viewgroups') 
+						b View Groups
+				li
+					a(href='/makeagroup') 
+						b Make a Group
+				li#loginorout
+					a(href='/login') 
+						b Log In
+				li#signorsettings
+					a(href='/signup') 
+						b Sign Up
+		nav.navbar.navbar-default.navbar-fixed-bottom
+			.container-fluid
+			ul.nav.navbar-nav.navbar-right
+				li
+					a(href='/contact') 
+						b Contact Us
+		block content

@@ -1,0 +1,22 @@
+extends layout
+block content
+
+    .content
+    .content2
+      form(action='/search', method='POST')
+        | Fill out as many fields as you want, and we will find you all available study groups based on your search!
+        br
+        br
+        .input-group
+          span#basic-addon1.input-group-addon Subject
+          input.form-control(type='text', name='Subject', placeholder='What course?', aria-describedby='basic-addon1')
+        .input-group
+          span#basic-addon1.input-group-addon Date
+          input.form-control(type='date', name='Date', aria-describedby='basic-addon1')
+        .input-group
+          span#basic-addon1.input-group-addon Time
+          input.form-control(type='time', name='Time', placeholder='eg. Sam', aria-describedby='basic-addon1')
+        .input-group
+          span#basic-addon1.input-group-addon Location
+          input.form-control(type='text', name='Location', placeholder='eg. HS 301', aria-describedby='basic-addon1')
+        button.btn-primary(type='submit') Create a Study Group!

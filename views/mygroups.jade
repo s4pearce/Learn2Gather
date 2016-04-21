@@ -1,0 +1,46 @@
+extends loggedlayout
+
+block content
+	div(class="content")
+	div(class="viewgroups")
+		h1(style="color:#FFFFFF") My Study Groups
+		hr(style="color:#FFFFFF")
+		each group in StudyGroups
+			.panel.panel-default
+				.panel-heading
+					h3.panel-title=group._id
+				.panel-body
+					b Subject: 
+					p=group.Subject
+					br
+					b Topics Covered: 
+					p=group.TopicsCovered
+					br
+					b Location: 
+					p=group.Location
+					br
+					b When: 
+					p=group.Date 
+					p=group.Time
+					br
+					b Current Members: 
+					ul
+						each user in group.Members
+							li=user
+					if Weekly
+						b Weekly until: 
+						p=group.UntilWhen
+					br
+					b Additional Comments: 
+						p=group.Comments
+				.panel-footer
+					form(action='/mygroups', method='post')
+						input(type='text', name="groupid", value=group._id, style="visibility:hidden")
+						| Want to remove this group? 
+						button.btn-primary(type="submit") Remove Group
+					form(action='/changegroup', method='get')
+						input(type='text', name="groupid", value=group._id, style="visibility:hidden")
+						| Or if you'd like to change the details... 
+						button.btn-primary(type="submit") Change Group
+
+	div(class="footer") © Copyright 2015

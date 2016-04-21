@@ -1,0 +1,43 @@
+extends loggedlayout
+block content
+    .content
+    .content2
+      if Message
+        | Message
+      h1 Make a Study Group
+      form(action='/makeagroup', method='POST')
+        | Making a study group is easy as 1-2-3! Simply enter as many details as you want, then press submit!
+        hr
+        .input-group
+          span#basic-addon1.input-group-addon Subject
+          input.form-control(type='text', name='Subject', required='', placeholder='What course?', aria-describedby='basic-addon1')
+        .input-group
+          span#basic-addon1.input-group-addon Topics Covered?
+          input.form-control(type='text', name='TopicsCovered', placeholder='Any particular unit, lecture, etc.?', aria-describedby='basic-addon1')
+        .input-group
+          span#basic-addon1.input-group-addon What Day?
+          input.form-control(type='date', name='Date', required='', aria-describedby='basic-addon1')
+        .input-group
+          span#basic-addon1.input-group-addon When?
+          input.form-control(type='time', name='Time', required='', placeholder='eg. Sam', aria-describedby='basic-addon1')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+          .checkbox
+            label
+              input(type='checkbox' onclick="UntilWhen()")
+              |  Weekly?
+        #untilwhen
+        script.
+          function UntilWhen(){
+            document.getElementById("untilwhen").innerHTML = '<div class="input-group"><span id="basic-addon1" class="input-group-addon">Until When?</span><input type="Date" name="UntilWhen" required="" aria-describedby="basic-addon1" class="form-control"/></div>';
+          }
+        .input-group
+          span#basic-addon1.input-group-addon Where?
+          input.form-control(type='text', name='Location', required='', placeholder='eg. HS 301', aria-describedby='basic-addon1')
+        .input-group
+          span#basic-addon1.input-group-addon Ideal Group Size?
+          input.form-control(type='number', name='GroupLimit', required='', placeholder='How big do you want the group to be?', aria-describedby='basic-addon1')
+        .input-group
+          span#basic-addon1.input-group-addon Comments?
+          input.form-control(type='text', name='Comments', placeholder='Anything else you want to add?', aria-describedby='basic-addon1')
+        button.btn-primary(type='submit') Create a Study Group!

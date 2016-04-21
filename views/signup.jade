@@ -1,0 +1,32 @@
+extends layout
+block content
+
+    .content
+    .content2
+      form(action='/signup', method='POST')
+        | Thank you for signing up for Learn2Gather! Please enter some of your information so we can set you up with a profile.
+        br
+        | (Note: The only thing others will see is your username. Your information is confidential and will NOT be shared with anyone!) 
+        br
+        br
+        .input-group
+          span#basic-addon1.input-group-addon Username
+          input.form-control(type='text', name='username', required='', placeholder='Username', aria-describedby='basic-addon1')
+        br
+        .input-group
+          span#basic-addon1.input-group-addon Password
+          input.form-control(type='text', name='password', required='', placeholder='Password', aria-describedby='basic-addon1')
+        br
+        .input-group
+          span#basic-addon1.input-group-addon First Name
+          input.form-control(type='text', name='fname', required='', placeholder='eg. Sam', aria-describedby='basic-addon1')
+        br
+        .input-group
+          span#basic-addon1.input-group-addon Last Name
+          input.form-control(type='text', name='lname', required='', placeholder='eg. Smith', aria-describedby='basic-addon1')
+        br
+        .input-group
+          span#basic-addon1.input-group-addon Email Address
+          input.form-control(type='text', name='email', required='', placeholder='eg. ssmith@uwaterloo.ca', aria-describedby='basic-addon1')
+        br
+        button.btn-primary(type='submit') Create an Account
